@@ -1,7 +1,9 @@
 FROM ginuerzh/gost:latest
 
-# Указываем порт и данные авторизации (замените myuser и mypass на свои)
+# Указываем порт Render и логин/пароль прокси
 ENV PROXY_USER=myuser
 ENV PROXY_PASS=mypass
 
-CMD gost -L="http://${PROXY_USER}:${PROXY_PASS}@:8080"
+EXPOSE 10000
+
+CMD gost -L="http://${PROXY_USER}:${PROXY_PASS}@:10000"
