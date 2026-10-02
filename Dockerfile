@@ -1,6 +1,7 @@
 FROM alpine:latest
 
-RUN apk add --no-cache 3proxy
+# Подключаем репозиторий testing и устанавливаем 3proxy
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing 3proxy
 
 COPY 3proxy.cfg /etc/3proxy/3proxy.cfg
 
